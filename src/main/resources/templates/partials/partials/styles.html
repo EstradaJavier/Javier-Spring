@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Javier's Page Styling</title>
+        <th:block th:replace="partials/styles :: styles src="main.css" />
+    </head>
+    <body class="d-flex flex-column min-vh-100">
+
+        <nav th:replace="partials/navbar :: navbar"></nav>
+        <header th:replace="partials/header :: header('about')"></header>
+
+        <footer th:replace="partials/footer :: footer"></footer>
+        <th:block th:replace="partials/scripts :: scripts" />
+
+    </body>
+</html>

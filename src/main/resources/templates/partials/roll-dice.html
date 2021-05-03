@@ -1,22 +1,36 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Enter Title Here</title>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>Dice</title>
+        <link th:replace="partials/links :: links"/>
+    </head>
+    <body>
+        <header th:replace="partials/header :: header"></header>
+        <nav th:replace="partials/navbar :: navbar"></nav>
 
-    <!----- STYLESHEET  STARTS  HERE ----->
-    <style src="jcss/external.css"></style>
-</head>
-<body>
+        <main class="container">
+            <h3 th:text="${message}"></h3><br>
+            <h2 class="prompt">Guess the number Game</h2>
+            <form action="/roll-dice" method="post">
+                <h3>Choose a number: </h3>
 
+                <button id="num1" class="di-num" name="number" type="submit" value="1">1</button>
 
-<!----- JAVIASCRIPT STARTS  HERE ------->
-<script>
+                <button id="num1" class="di-num" name="number" type="submit" value="2">2</button>
 
-    (function () {
-        "use strict";
+                <button id="num1" class="di-num" name="number" type="submit" value="3">3</button>
 
+                <button id="num1" class="di-num" name="number" type="submit" value="4">4</button>
 
-    }) ();
-</script>
-</body>
+                <button id="num1" class="di-num" name="number" type="submit" value="5">5</button>
+
+                <button id="num1" class="di-num" name="number" type="submit" value="6">6</button>
+
+            </form>
+        </main>
+
+        <footer th:replace="partials/footer :: footer"></footer>
+        <scripts th:replace="partials/scripts :: scripts"></scripts>
+    </body>
 </html>

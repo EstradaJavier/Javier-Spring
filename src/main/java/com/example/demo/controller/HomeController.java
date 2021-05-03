@@ -12,7 +12,7 @@ public class HomeController {
     @ResponseBody
     public String landing() {
 
-        return "This is the landing page!";
+        return "Javier's Landing Page!";
 
     }
 }
