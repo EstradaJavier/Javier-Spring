@@ -16,6 +16,9 @@ public class Post {
     @Column(nullable = false, columnDefinition = "text")
     private String body;
 
+
+//  In your User and Post classes, define the post - user relationship.
+//  Many posts to one user.
     @ManyToOne
     private User user;
 

@@ -23,12 +23,15 @@ public class User {
     private String password;
 
 
+//  In your User and Post classes, define the post - user relationship.
+//  One user to many posts
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
 
 
-
+//  empty listener
     public User() {
+
     }
 
     public User(long id, String email, String username, String password, List<Post> posts) {
@@ -38,21 +41,16 @@ public class User {
         this.password = password;
     }
 
-    // implement the Copy Constructor right here in the User model!
-    // We can call on this constructor from elsewhere in our code, and don't have to specify
-    // all of the User object's properties (like email, username, etc)
     public User(User copy) {
-        this.id = copy.id; // VERY IMPORTANT. Many things won't work if you don't include this assignment
+        this.id = copy.id;
         this.email = copy.email;
         this.username = copy.username;
         this.password = copy.password;
         this.posts = copy.posts;
-
-        // It's like the Abed from the Darkest Timeline, and normal Abed (Community - it's on Netflix. Watch it)
     }
 
-    public long getId() {
 
+    public long getId() {
         return id;
     }
 
