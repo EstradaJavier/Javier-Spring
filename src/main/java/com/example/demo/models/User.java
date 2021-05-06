@@ -1,4 +1,4 @@
-package com.codeup.blog.models;
+package com.example.demo.models;
 
 import javax.persistence.*;
 import java.util.List;
@@ -31,19 +31,19 @@ public class User {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<Ad> ads;
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+//    private List<Ad> ads;
 
     // zero argument constructor - to simply reserve space in memory for creation of User objects
     public User() {
     }
 
-    public User(long id, String email, String username, String password, List<Ad> ads, List<Post> posts) {
+    public User(long id, String email, String username, String password, List<Post> posts) {
         this.id = id;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.ads = ads;
+//        this.ads = ads;
         this.posts = posts;
     }
 
@@ -55,7 +55,6 @@ public class User {
         this.email = copy.email;
         this.username = copy.username;
         this.password = copy.password;
-        this.ads = copy.ads;
         this.posts = copy.posts;
 
         // It's like the Abed from the Darkest Timeline, and normal Abed (Community - it's on Netflix. Watch it)
@@ -101,15 +100,15 @@ public class User {
         this.password = password;
     }
 
-    public List<Ad> getAds() {
-
-        return ads;
-    }
-
-    public void setAds(List<Ad> ads) {
-
-        this.ads = ads;
-    }
+//    public List<Ad> getAds() {
+//
+//        return ads;
+//    }
+//
+//    public void setAds(List<Ad> ads) {
+//
+//        this.ads = ads;
+//    }
 
     public List<Post> getPosts() {
 
