@@ -20,7 +20,7 @@ public class PostController {
     @ResponseBody
     public String postIndex() {
 
-        return "This is the posts";
+        return "Here is my posts page.";
 
     }
 

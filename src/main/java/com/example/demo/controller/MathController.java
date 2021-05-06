@@ -12,6 +12,8 @@ public class MathController {
     @GetMapping("/math")
     @ResponseBody
     public String landing() {
-        return "This is the MathController page!";
+
+        return "This is Javis MathController page!";
+
     }
 }

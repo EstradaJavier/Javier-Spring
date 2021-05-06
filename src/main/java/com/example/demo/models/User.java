@@ -3,6 +3,9 @@ package com.example.demo.models;
 import javax.persistence.*;
 import java.util.List;
 
+//Create a User class, with (at least) fields for
+// id, username, email, and password.
+
 @Entity
 @Table(name="users")
 public class User {
@@ -11,40 +14,28 @@ public class User {
     private long id;
 
     @Column(nullable = false)
-    private String email;
+    private String username;
 
     @Column(nullable = false)
-    private String username;
+    private String email;
 
     @Column(nullable = false)
     private String password;
 
-    // If we wanted to check for account expiration (like it's been more than 365 days since
-    // they registered, we need to store a 'registrationDate' property, to do the date
-    // difference check on
-    // @Column(nullable = false)
-    // private Date registrationDate;
-
-    // We would also add this property to the constructor, copy constructor, and add getters
-    // and setters for it, if we wanted to store the registration
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
 
-//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-//    private List<Ad> ads;
 
-    // zero argument constructor - to simply reserve space in memory for creation of User objects
+
     public User() {
     }
 
     public User(long id, String email, String username, String password, List<Post> posts) {
         this.id = id;
-        this.email = email;
         this.username = username;
+        this.email = email;
         this.password = password;
-//        this.ads = ads;
-        this.posts = posts;
     }
 
     // implement the Copy Constructor right here in the User model!
@@ -99,16 +90,6 @@ public class User {
 
         this.password = password;
     }
-
-//    public List<Ad> getAds() {
-//
-//        return ads;
-//    }
-//
-//    public void setAds(List<Ad> ads) {
-//
-//        this.ads = ads;
-//    }
 
     public List<Post> getPosts() {
 
