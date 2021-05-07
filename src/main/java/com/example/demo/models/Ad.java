@@ -13,35 +13,47 @@ public class Ad {
     @Column(nullable = false)
     private String title;
 
+    public Ad() {
+
+    }
+
     public long getId() {
+
         return id;
     }
 
     public String getTitle() {
+
         return title;
     }
 
     public String getDescription() {
+
         return description;
     }
 
     public int getPriceInCents() {
+
         return priceInCents;
     }
 
     public void setId(long id) {
+
         this.id = id;
     }
 
     public void setTitle(String title) {
+
         this.title = title;
     }
 
     public void setDescription(String description) {
+
         this.description = description;
     }
 
     public void setPriceInCents(int priceInCents) {
+
         this.priceInCents = priceInCents;
     }
 
@@ -59,3 +71,4 @@ public class Ad {
     private int priceInCents;
 
 }
+
