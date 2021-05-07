@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:="repalce partials/header :: head('Spring Blog Home Page')">
+    <meta charset="UTF-8">
+    <title>Enter Title Here</title>
+
+</head>
+<body>
+    <nav th:repalce="partials/navbar :: navbar"/>
+        <h1>Javier's Ads Page</h1>
+        <div>
+            <form th:action="@{/ads/create}" th:method="post" th:object="${ad}">
+                Title:
+                <input th:field="*{title}" />
+                <br />
+                Description:
+                <input th:field="*{description}" />
+                <br />
+                <input type="submit" />
+            </form>
+        </div>
+    <footer th:repalce="partials/footer :: footer"/>
+</body>
+</html>
