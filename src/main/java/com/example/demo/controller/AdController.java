@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.models.Ad;
 import com.example.demo.repositories.AdRepository;
+import com.example.demo.services.EmailService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AdController {
     private final AdRepository adDao;
+    private final EmailService emailService;
 
-    public AdController(AdRepository adDao) {
+    public AdController(AdRepository adDao, EmailService emailService) {
+
         this.adDao = adDao;
+        this.emailService = emailService;
     }
 
     @GetMapping("/ads/create")
@@ -33,7 +37,13 @@ public class AdController {
         ad.setTitle(title);
         ad.setDescription(description);
         // Saving my ad
-        return "redirect:/posts/";
+        emailService.prepareAndSend(
+                ad,
+                "Hello From Javiers Ad",
+                "Body of my email Ad"
+        );
+        return "redirect:/ads/";
 
     }
+
 }
