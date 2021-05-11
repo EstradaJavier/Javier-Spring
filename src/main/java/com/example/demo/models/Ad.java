@@ -70,8 +70,5 @@ public class Ad {
     @Column(nullable = false)
     private int priceInCents;
 
-//    public User getOwner() {
-//        return this.user;
-//    }
 }
 

@@ -1,29 +1,22 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+    <html xmlns:th="http://wwww.thymeleaf.org" lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Luna Blog: Create Post</title>
+        <th:block th:replace="partials/styles :: styles" />
+    </head>
+    <body class="d-flex flex-column min-vh-100">
 
-    <head th:="repalce partials/header :: head('Javis Create Page')"></head>
+        <nav th:replace="partials/navbar :: navbar"></nav>
+        <header th:replace="partials/header :: header('Create Post')"></header>
 
-    <body>
+        <!-- use thymeleaf to dynamically create the html for each post -->
+        <main class="container">
+            <section th:replace="partials/post-form :: post-form('Create Post', '/posts/create')"></section>
+        </main>
 
-        <navbar th:repalce="partials/navbar :: navbar"/></navbar>
+        <footer th:replace="partials/footer :: footer"></footer>
+        <th:block th:replace="partials/scripts :: scripts" />
 
-        <div class=""container>
-            <h1>Create Post Page</h1>
-
-            <form th:action="@{/posts/create}" th:method="POST" th:object="${post}">
-                <div class="form-group">
-                    <label for="Title"></label>
-                    <input class="form-control" type="text" id="title" th:field="*{tile}" />
-                </div>
-
-                <div class="form-group">
-                    <label for="body">Body</label>
-                    <textarea name="form-control" id="body" th:field="*{body}"></textarea>
-                </div>
-
-                <input type="submit" value="Create Post" />
-            </form>
-        </div>
-        <footer th:repalce="partials/footer :: footer"/>
     </body>
 </html>

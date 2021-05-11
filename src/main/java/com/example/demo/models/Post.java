@@ -10,15 +10,15 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false)
     private String title;
 
-    @Column(nullable = false, columnDefinition = "text")
+    @Column(columnDefinition = "TEXT NOT NULL")
     private String body;
 
 
-//  In your User and Post classes, define the post - user relationship.
-//  Many posts to one user.
+    //  In your User and Post classes, define the post - user relationship.
+    //  Many posts to one user. Represents the user.
     @ManyToOne
     private User user;
 

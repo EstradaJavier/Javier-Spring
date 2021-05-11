@@ -39,7 +39,7 @@ public class AdController {
         // Saving my ad
         emailService.prepareAndSend(
                 ad,
-                "Hello From Javiers Ad",
+                "Hello From Javier's Ad",
                 "Body of my email Ad"
         );
         return "redirect:/ads/";

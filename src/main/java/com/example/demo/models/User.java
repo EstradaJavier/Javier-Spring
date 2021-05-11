@@ -13,23 +13,23 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String username;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String email;
 
     @Column(nullable = false)
     private String password;
 
 
-//  In your User and Post classes, define the post - user relationship.
-//  One user to many posts
+    //  In your User and Post classes, define the post - user relationship.
+    //  One user to many posts
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<Post> posts;
 
 
-//  empty listener
+    //  empty constructor/listener
     public User() {
 
     }
@@ -51,6 +51,7 @@ public class User {
 
 
     public long getId() {
+
         return id;
     }
 
